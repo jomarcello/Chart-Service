@@ -1,9 +1,21 @@
-fastapi==0.68.1
-uvicorn==0.15.0
-selenium==4.1.0
-python-multipart==0.0.5
-pillow==9.3.0
-aiofiles==0.7.0
-python-dotenv==0.19.1
-webdriver_manager==3.8.6
-requests==2.28.1
+# Core dependencies
+fastapi==0.109.0
+python-telegram-bot==20.3
+uvicorn==0.27.0
+httpx==0.25.2
+python-dotenv==1.0.0
+
+# Database
+supabase==1.2.0
+redis==5.0.1
+
+# Chart generation
+selenium==4.16.0
+pillow==10.2.0
+webdriver_manager==4.0.1
+
+# AI/ML
+openai==1.10.0
+
+# Utils
+python-multipart==0.0.6
