@@ -41,6 +41,17 @@ async def take_screenshot(symbol: str = 'EURUSD', timeframe: str = '1h'):
             driver.get(url)
             time.sleep(5)  # Wait for chart to load
             
+            # Zoom in op de chart
+            driver.execute_script("""
+                const chart = document.querySelector('div[class*="chart-container"]');
+                if (chart) {
+                    chart.style.transform = 'scale(1.5)';  // 50% inzoomen
+                    chart.style.transformOrigin = 'center center';
+                }
+            """)
+            
+            time.sleep(2)  # Wait for zoom effect
+            
             # Take screenshot
             timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
             filename = f"/tmp/screenshots/{symbol}_{timeframe}_{timestamp}.png"
